@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        heightMark = 1.69;
+        weightMark = 78;
+        BMIMark = weightMark / (heightMark ** 2);
+
+        heightJohn = 1.95;
+        weightJohn = 92;
+        BMIJohn = weightJohn / (heightJohn ** 2);
+
+        markHigherBMI = BMIMark > BMIJohn;
+        console.log(markHigherBMI);
+
+
+        heightMark = 1.88;
+        weightMark = 95;
+        BMIMark = weightMark / (heightMark ** 2);
+
+        heightJohn = 1.76;
+        weightJohn = 85;
+        BMIJohn = weightJohn / (heightJohn ** 2);
+
+        markHigherBMI = BMIMark > BMIJohn;
+        console.log(markHigherBMI);
+        console.log(BMIJohn);
+        console.log(BMIMark);
+
+        //  challenge 3
+        console.log("Coding challenge 3 ------------------");
+        const dolphinsScores = [96, 108, 89];
+        const koalasScores = [88, 91, 110];
+
+        const dolphinsAverageScore =
+            dolphinsScores.reduce((accumulator, currentValue) => {
+                return accumulator + currentValue;
+            }, 0) / dolphinsScores.length;
+
+        const koalasAverageScore =
+            koalasScores.reduce((accumulator, currentValue) => {
+                return accumulator + currentValue;
+            }, 0) / koalasScores.length;
+
+        let winner;
+
+        if (dolphinsAverageScore > koalasAverageScore && dolphinsAverageScore >= 100) {
+            winner = "Dolphins";
+        } else if (
+            koalasAverageScore > dolphinsAverageScore &&
+            koalasAverageScore >= 100
+        ) {
+            winner = "Koalas";
+        } else {
+            winner = "Draw";
+        }
+        console.log(`The winner is ${winner}`);
+
+        // challenge 4
+        console.log("bai 4:");
+        var bill = 275;
+        var tip = (bill >= 50 && bill <= 300) ? bill * 0.15 : bill * 0.2;
+        console.log("bill and tip :", bill + tip)
+        // challenge 6
+        console.log("Coding challenge 6 ------------------");
+        const calcTip = (billValue) => {
+            const tip = billValue >= 50 && billValue >= 300 ? billValue * 0.15 : billValue * 0.2
+            return tip;
+        }
+
+        const bills = [125, 555, 44];
+        const tips = bills.map(bill => calcTip(bill));
+        const totals = bills.map(bill => bill + tips[bills.indexOf(bill)]);
+        console.log("Tip: " + tips);
+        console.log("totals: " + totals);
+
+        // challenge 7
+        console.log("Coding challenge 7 ------------------");
+
+        const mark = {
+            name: "Mark Miller",
+            mass: 78,
+            height: 1.69,
+        };
+
+        const john = {
+            name: "John Smith",
+            mass: 92,
+            height: 1.95,
+        };
+
+        const calcBMI = (person) => {
+            const bmi = person.mass / person.height ** 2;
+            person.bmi = bmi;
+            return bmi;
+        };
+
+        const markBMI = calcBMI(mark);
+        const johnBMI = calcBMI(john);
+
+        if (markBMI > johnBMI) {
+            console.log(`Mark's BMI (${markBMI}) is higher than John's BMI (${johnBMI})`);
+        } else {
+            console.log(`John's BMI (${johnBMI}) is higher than Mark's BMI (${markBMI})`);
+        }
+
+    </script>
+
+</body>
+
+</html>
